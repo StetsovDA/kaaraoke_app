@@ -1,0 +1,61 @@
+﻿<Window x:Class="kaaraoke_app.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:kaaraoke_app"
+        mc:Ignorable="d"
+        Title="karaoke app" Height="643" Width="1056" Background="Black" WindowState="Maximized">
+    <Grid>
+        <DockPanel>
+            <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Auto">
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Left" Width="150" Background="#FF171D25">
+                    <DockPanel>
+                        <Button   Width="150" Height="30" DockPanel.Dock="Top" Background="#FF171D25" BorderBrush="Black" Foreground="#FFFFFBFB" Click="Button_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Height="30" Source="C:\Users\Danila\Desktop\kaaraoke_app-20241218T065243Z-001\kaaraoke_app\kaaraoke_app\bin\Debug\net8.0-windows/Thriller.jpg"/>
+                                <Label Content="Thriller" Foreground="#FFFFFF"/>
+                            </StackPanel>
+                        </Button>
+
+                        <Button   Width="150" Height="30" DockPanel.Dock="Top" Background="#FF171D25" BorderBrush="Black" Foreground="#FFFFFBFB" Click="Button_Click_1">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Height="30" Source="C:\Users\Danila\Desktop\kaaraoke_app-20241218T065243Z-001\kaaraoke_app\kaaraoke_app\bin\Debug\net8.0-windows/H@rd3r.jpg"/>
+                                <Label Content="H@rd3r  🅴" Foreground="#FFFFFF"/>
+                            </StackPanel>
+                        </Button>
+                        <Label DockPanel.Dock="Bottom"/>
+                    </DockPanel>
+                </StackPanel>
+            </ScrollViewer>
+
+            <!-- Main Display Area -->
+            <StackPanel Orientation="Vertical" DockPanel.Dock="Bottom">
+                <DockPanel>
+                    <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
+                        <Button x:Name="previousButton"  Content=" Previous" Click="previousButton_Click" Width="150" Height="30" DockPanel.Dock="Top" Background="#FF171D25" BorderBrush="Black" Foreground="#FFFFFBFB"/>
+                        <Button x:Name="playButton" Content="Play" Click="playButton_Click" Width="150" Height="30" DockPanel.Dock="Top" Background="#FF171D25" BorderBrush="Black" Foreground="#FFFFFBFB"/>
+                        <Button x:Name="stopButton" Content="Stop" Click="stopButton_Click" Width="150" Height="30" DockPanel.Dock="Top" Background="#FF171D25" BorderBrush="Black" Foreground="#FFFFFBFB"/>
+                        <Button x:Name="nextButton" Content="Next >" Click="nextButton_Click" Width="150" Height="30" DockPanel.Dock="Top" Background="#FF171D25" BorderBrush="Black" Foreground="#FFFFFBFB"/>
+                        <Button x:Name="loadAudioButton" Content="Load Audio" Click="loadAudioButton_Click" Width="150" Height="30" DockPanel.Dock="Top" Background="#FF171D25" BorderBrush="Black" Foreground="#FFFFFBFB"/>
+                        <Button x:Name="loadLRCButton" Content="Load LRC" Click="loadLRCButton_Click" Width="150" Height="30" DockPanel.Dock="Top" Background="#FF171D25" BorderBrush="Black" Foreground="#FFFFFBFB"/>
+                    </StackPanel>
+                    <TextBlock x:Name="timeTextBlock" FontSize="20" DockPanel.Dock="Bottom" Foreground="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Slider x:Name="audioSlider" ValueChanged="audioSlider_ValueChanged"
+                         Minimum="0"
+                         Maximum="{Binding ElementName=audioSlider, Path=Maximum}" 
+                         Width="500"
+                         Height="25"
+                        DockPanel.Dock="Bottom"/>
+                    <Viewbox Height="350">
+                        <TextBlock x:Name="lyricsTextBox" DockPanel.Dock="Top" Height="200" FontSize="50" Foreground="#FFFFFF" TextWrapping="Wrap"/>
+                    </Viewbox>
+                </DockPanel>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</Window>
